@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BIBLIOTECATEC.Models.TipoEjemplar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagenFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagenFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idTipoEjemplar }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idTipoEjemplar }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idTipoEjemplar })
+        </td>
+    </tr>
+}
+
+</table>
