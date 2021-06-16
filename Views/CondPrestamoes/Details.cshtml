@@ -1,0 +1,42 @@
+﻿@model BIBLIOTECATEC.Models.CondPrestamo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CondPrestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.limitePrestamos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.limitePrestamos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.limiteRenovaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.limiteRenovaciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idCondicion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

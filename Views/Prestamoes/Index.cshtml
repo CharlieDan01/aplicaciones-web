@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BIBLIOTECATEC.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaDesde)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaHasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaPrevistaDev)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaDesde)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaHasta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaPrevistaDev)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPrestamo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPrestamo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPrestamo })
+        </td>
+    </tr>
+}
+
+</table>

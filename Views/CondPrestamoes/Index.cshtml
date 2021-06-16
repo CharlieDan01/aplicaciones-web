@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BIBLIOTECATEC.Models.CondPrestamo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.limitePrestamos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.limiteRenovaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.limitePrestamos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.limiteRenovaciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCondicion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCondicion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCondicion })
+        </td>
+    </tr>
+}
+
+</table>
